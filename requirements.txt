@@ -1,0 +1,11 @@
+llama-index
+llama-index-embeddings-huggingface
+llama-index-vector-stores-milvus
+llama-index-llms-openai-like
+llama-index-llms-llama-cpp
+llama-index-llms-dashscope
+llama-index-postprocessor-flag-embedding-reranker
+FlagEmbedding
+matplotlib
+PyQt6
+pymilvus

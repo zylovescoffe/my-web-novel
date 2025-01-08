@@ -1,0 +1,18 @@
+FROM /Users/Zhiyuan/Project/hf/Qwen2.5-7B-Instruct/Qwen2.5-7B-Instruct-F16.gguf
+
+PARAMETER temperature 0.7
+PARAMETER num_ctx 20480
+PARAMETER seed 99
+PARAMETER stop <|im_end|>
+PARAMETER num_predict 512
+PARAMETER top_k 50
+PARAMETER top_p 0.95
+
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
+"""
+
+SYSTEM 你是熟读中国仙侠世界的中文传记作家，严格依据提供的信息回答问题。

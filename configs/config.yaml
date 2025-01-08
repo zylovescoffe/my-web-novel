@@ -1,0 +1,43 @@
+version: 0.1
+
+db_setup:
+  db_url: 127.0.0.1
+  db_port: 19530
+  use_local: /Users/Zhiyuan/Project/rag_projects/my-web-novel/cache/db/milvus.db
+
+index_pipeline:
+  pipeline_cache_path: cache/pipeline_cache
+  chunk_size: 1024
+  chunk_overlap: 128
+  db_port: 19530
+  title_extractor:
+  summary_extractor:
+  qa_extractor:
+
+query_pipeline:
+  similarity_top_k: 30
+  reranker_model_relative_path: bge-reranker-v2-m3
+  reranker_top_n: 6
+
+llm_evaluation:
+  llm_runs: 3
+  use_qwen: True
+  type: dashscope
+  max_tokens: 1024
+  temperature: 0.9
+  
+llm_generation:
+  type: mlx
+  temperature: 0.7
+  url: http://127.0.0.1:8889/v1/
+  max_tokens: 512
+  tokenizer_relative_dir: models/Qwen2.5-7B-Instruct-8b
+
+text_reranker:
+  relative_path: models/bge-reranker-v2-m3
+  top_n: 6
+
+sentence_embedder:
+  relative_path: models/bge-m3
+  dim: 1024
+  hybrid_ranker: RRFRanker

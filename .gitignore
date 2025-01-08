@@ -1,3 +1,13 @@
+cache
+experiment/
+models/*
+*/ss
+scripts/test_*
+data/raw
+data/test/*
+data/filter/*
+data/eval/bak
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
